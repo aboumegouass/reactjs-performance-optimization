@@ -1,10 +1,9 @@
-# React Practical Coding Test
+# Performance Optimization
 
-Here’s the improved and optimized version:
+Here's an optimized version of **Counter** component that prevents unnecessary re-renders when typing in the input field:
 
 ## Key Improvements
 
-- Extracted API Call Logic: The fetching logic is now inside a reusable function, `fetchItems` in `/services/api.ts`
-- Better Error Handling: Used `useState` to store errors and display them in the UI and using customize `Alert` component from `/components/UIComponents/Alert`
-- Replaced Index Key: Used `item.id` instead of `index` as the list key
-- To manage the items state efficiently, consider the following approaches based on project needs **Redux** or **Zustand** or simple `useState`
+- **`React.memo`:** Wraps the **CounterItem** component to prevent unnecessary re-renders
+- **`useCallback`:** Memoizes the increment function to avoid re-creating it on every render
+- I have taken the input out into an external **FormInput** component which will be usable in the future. Component source `/components/Form/FormInput`
